@@ -152,8 +152,8 @@ public class Matrix {
 
     @Override
     public String toString() {
-        return "Matrix[\n" +
-                String.join("\n", matrix.stream().map(e -> String.join(", ", e.toString())).toList())
+        return "Matrix[\n  " +
+                String.join(", \n  ", matrix.stream().map(e -> String.join(", ", e.stream().map(Object::toString).toList())).toList())
                  + "\n]";
     }
 
